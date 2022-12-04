@@ -1,0 +1,244 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 232 72 400 88)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "A[15..0]" (rect 5 0 43 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 224 112 392 128)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "B[15..0]" (rect 5 0 43 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 1032 368 1208 384)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "nand[15..0]" (rect 90 0 145 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(symbol
+	(rect 520 208 664 304)
+	(text "nand_logic8bit" (rect 5 0 86 14)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 80 25 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "A[7..0]" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "A[7..0]" (rect 21 27 58 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "B[7..0]" (rect 0 0 36 14)(font "Arial" (font_size 8)))
+		(text "B[7..0]" (rect 21 43 57 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 144 32)
+		(output)
+		(text "nand[7..0]" (rect 0 0 56 14)(font "Arial" (font_size 8)))
+		(text "nand[7..0]" (rect 67 27 123 41)(font "Arial" (font_size 8)))
+		(line (pt 144 32)(pt 128 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 128 80))
+	)
+)
+(symbol
+	(rect 776 208 920 304)
+	(text "nand_logic8bit" (rect 5 0 86 14)(font "Arial" (font_size 8)))
+	(text "inst1" (rect 8 80 31 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "A[7..0]" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "A[7..0]" (rect 21 27 58 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "B[7..0]" (rect 0 0 36 14)(font "Arial" (font_size 8)))
+		(text "B[7..0]" (rect 21 43 57 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 144 32)
+		(output)
+		(text "nand[7..0]" (rect 0 0 56 14)(font "Arial" (font_size 8)))
+		(text "nand[7..0]" (rect 67 27 123 41)(font "Arial" (font_size 8)))
+		(line (pt 144 32)(pt 128 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 128 80))
+	)
+)
+(connector
+	(pt 520 240)
+	(pt 496 240)
+	(bus)
+)
+(connector
+	(pt 776 240)
+	(pt 752 240)
+	(bus)
+)
+(connector
+	(pt 776 256)
+	(pt 728 256)
+	(bus)
+)
+(connector
+	(pt 520 256)
+	(pt 472 256)
+	(bus)
+)
+(connector
+	(text "A[15..8]" (rect 480 197 492 235)(font "Arial" )(vertical))
+	(pt 496 240)
+	(pt 496 80)
+	(bus)
+)
+(connector
+	(text "B[15..8]" (rect 456 213 468 251)(font "Arial" )(vertical))
+	(pt 472 256)
+	(pt 472 120)
+	(bus)
+)
+(connector
+	(text "A[7..0]" (rect 736 202 748 235)(font "Arial" )(vertical))
+	(pt 752 240)
+	(pt 752 80)
+	(bus)
+)
+(connector
+	(text "B[7..0]" (rect 712 218 724 251)(font "Arial" )(vertical))
+	(pt 728 256)
+	(pt 728 120)
+	(bus)
+)
+(connector
+	(pt 400 80)
+	(pt 496 80)
+	(bus)
+)
+(connector
+	(pt 496 80)
+	(pt 752 80)
+	(bus)
+)
+(connector
+	(pt 752 80)
+	(pt 848 80)
+	(bus)
+)
+(connector
+	(pt 392 120)
+	(pt 472 120)
+	(bus)
+)
+(connector
+	(pt 472 120)
+	(pt 728 120)
+	(bus)
+)
+(connector
+	(pt 728 120)
+	(pt 848 120)
+	(bus)
+)
+(connector
+	(pt 640 376)
+	(pt 696 376)
+	(bus)
+)
+(connector
+	(pt 664 240)
+	(pt 696 240)
+	(bus)
+)
+(connector
+	(pt 696 376)
+	(pt 960 376)
+	(bus)
+)
+(connector
+	(pt 960 376)
+	(pt 1032 376)
+	(bus)
+)
+(connector
+	(pt 920 240)
+	(pt 960 240)
+	(bus)
+)
+(connector
+	(text "nand[15..8]" (rect 678 331 690 386)(font "Arial" )(vertical))
+	(pt 696 240)
+	(pt 696 376)
+	(bus)
+)
+(connector
+	(text "nand[7..0]" (rect 942 327 954 376)(font "Arial" )(vertical))
+	(pt 960 240)
+	(pt 960 376)
+	(bus)
+)
+(junction (pt 496 80))
+(junction (pt 752 80))
+(junction (pt 472 120))
+(junction (pt 728 120))
+(junction (pt 696 376))
+(junction (pt 960 376))

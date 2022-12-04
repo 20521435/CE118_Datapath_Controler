@@ -1,0 +1,1461 @@
+TimeQuest Timing Analyzer report for Buoi2
+Sun Dec 04 23:07:39 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLK'
+ 12. Slow Model Hold: 'CLK'
+ 13. Slow Model Minimum Pulse Width: 'CLK'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'CLK'
+ 26. Fast Model Hold: 'CLK'
+ 27. Fast Model Minimum Pulse Width: 'CLK'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Buoi2                                                             ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; CLK        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 102.65 MHz ; 102.65 MHz      ; CLK        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -8.742 ; -1115.756     ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; CLK   ; 2.801 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; CLK   ; -1.380 ; -145.380              ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLK'                                                                                                                                                                                          ;
++--------+-----------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                       ; To Node                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -8.742 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.782      ;
+; -8.739 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.779      ;
+; -8.661 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.697      ;
+; -8.658 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.694      ;
+; -8.638 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.685      ;
+; -8.637 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.684      ;
+; -8.621 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.661      ;
+; -8.620 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.660      ;
+; -8.618 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.665      ;
+; -8.618 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.665      ;
+; -8.618 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.658      ;
+; -8.617 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.657      ;
+; -8.611 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.651      ;
+; -8.609 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.008      ; 9.653      ;
+; -8.608 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.008      ; 9.652      ;
+; -8.608 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.648      ;
+; -8.574 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.610      ;
+; -8.571 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.607      ;
+; -8.557 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.600      ;
+; -8.556 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.599      ;
+; -8.547 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.587      ;
+; -8.546 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.586      ;
+; -8.537 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.580      ;
+; -8.537 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.580      ;
+; -8.534 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.570      ;
+; -8.531 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.567      ;
+; -8.528 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.568      ;
+; -8.527 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.567      ;
+; -8.520 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.560      ;
+; -8.516 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.556      ;
+; -8.509 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 9.538      ;
+; -8.507 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.554      ;
+; -8.506 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 9.535      ;
+; -8.506 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.553      ;
+; -8.503 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 9.538      ;
+; -8.501 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.532      ;
+; -8.500 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.001     ; 9.535      ;
+; -8.500 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.536      ;
+; -8.499 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.535      ;
+; -8.498 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.005     ; 9.529      ;
+; -8.495 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst8|inst1   ; CLK          ; CLK         ; 1.000        ; 0.006      ; 9.537      ;
+; -8.494 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.537      ;
+; -8.493 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.006      ; 9.535      ;
+; -8.493 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst3|inst1   ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.536      ;
+; -8.492 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.532      ;
+; -8.491 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.538      ;
+; -8.490 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.537      ;
+; -8.489 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.529      ;
+; -8.487 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.534      ;
+; -8.487 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.534      ;
+; -8.481 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.517      ;
+; -8.480 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.516      ;
+; -8.479 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst5|inst1   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.515      ;
+; -8.478 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst5|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.514      ;
+; -8.478 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.008      ; 9.522      ;
+; -8.477 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.008      ; 9.521      ;
+; -8.476 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 9.505      ;
+; -8.473 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 9.502      ;
+; -8.471 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.518      ;
+; -8.471 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.518      ;
+; -8.468 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst10|inst1 ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.515      ;
+; -8.467 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst10|inst1 ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.514      ;
+; -8.462 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.008      ; 9.506      ;
+; -8.461 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst1|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.501      ;
+; -8.461 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1  ; CLK          ; CLK         ; 1.000        ; 0.008      ; 9.505      ;
+; -8.458 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst1|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.498      ;
+; -8.457 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst5|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.504      ;
+; -8.455 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst5|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.502      ;
+; -8.448 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst8|inst1   ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.486      ;
+; -8.446 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.484      ;
+; -8.446 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 9.475      ;
+; -8.443 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.479      ;
+; -8.443 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 9.472      ;
+; -8.441 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.477      ;
+; -8.440 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.476      ;
+; -8.439 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.475      ;
+; -8.438 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.474      ;
+; -8.435 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.471      ;
+; -8.434 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.003     ; 9.467      ;
+; -8.432 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst5|inst1   ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.464      ;
+; -8.431 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 9.460      ;
+; -8.431 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst5|inst1  ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.463      ;
+; -8.431 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.003     ; 9.464      ;
+; -8.429 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst8|inst1   ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.467      ;
+; -8.428 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst9|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.475      ;
+; -8.428 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst9|inst1  ; CLK          ; CLK         ; 1.000        ; 0.011      ; 9.475      ;
+; -8.428 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 9.457      ;
+; -8.427 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.002      ; 9.465      ;
+; -8.423 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.459      ;
+; -8.422 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst11|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 9.451      ;
+; -8.421 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst11|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; -0.007     ; 9.450      ;
+; -8.421 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst10|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.464      ;
+; -8.420 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 9.456      ;
+; -8.420 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst10|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 9.463      ;
+; -8.418 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.458      ;
+; -8.417 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst8|inst1  ; CLK          ; CLK         ; 1.000        ; 0.004      ; 9.457      ;
+; -8.413 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.452      ;
+; -8.413 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst5|inst1   ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.445      ;
+; -8.412 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst3|inst1   ; CLK          ; CLK         ; 1.000        ; 0.003      ; 9.451      ;
+; -8.412 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst5|inst1  ; CLK          ; CLK         ; 1.000        ; -0.004     ; 9.444      ;
++--------+-----------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLK'                                                                                                                                                                                         ;
++-------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                       ; To Node                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.801 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.069      ;
+; 2.941 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.209      ;
+; 3.119 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.387      ;
+; 3.122 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.004      ; 3.392      ;
+; 3.205 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.471      ;
+; 3.237 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; -0.001     ; 3.502      ;
+; 3.240 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; -0.001     ; 3.505      ;
+; 3.249 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; -0.001     ; 3.514      ;
+; 3.262 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.004      ; 3.532      ;
+; 3.294 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.004      ; 3.564      ;
+; 3.297 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst12|inst1  ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 3.568      ;
+; 3.326 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; -0.004     ; 3.588      ;
+; 3.353 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.621      ;
+; 3.374 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; -0.003     ; 3.637      ;
+; 3.378 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.646      ;
+; 3.453 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst2|inst1   ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; 0.003      ; 3.722      ;
+; 3.472 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.740      ;
+; 3.482 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.748      ;
+; 3.493 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.761      ;
+; 3.515 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; -0.001     ; 3.780      ;
+; 3.518 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst4                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 3.785      ;
+; 3.518 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.786      ;
+; 3.518 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; -0.001     ; 3.783      ;
+; 3.520 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.788      ;
+; 3.527 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; -0.001     ; 3.792      ;
+; 3.532 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 3.799      ;
+; 3.534 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.802      ;
+; 3.538 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst4                                        ; CLK          ; CLK         ; 0.000        ; -0.002     ; 3.802      ;
+; 3.539 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.009      ; 3.814      ;
+; 3.543 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.811      ;
+; 3.543 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.811      ;
+; 3.571 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 3.842      ;
+; 3.578 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst8|inst1  ; register_OE:inst5|inst6                                        ; CLK          ; CLK         ; 0.000        ; -0.014     ; 3.830      ;
+; 3.581 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; 0.003      ; 3.850      ;
+; 3.589 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.857      ;
+; 3.596 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.864      ;
+; 3.603 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst15|inst1 ; register_OE:inst5|inst15                                       ; CLK          ; CLK         ; 0.000        ; -0.008     ; 3.861      ;
+; 3.605 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; -0.006     ; 3.865      ;
+; 3.611 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; -0.006     ; 3.871      ;
+; 3.615 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.006      ; 3.887      ;
+; 3.632 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 3.903      ;
+; 3.641 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; -0.002     ; 3.905      ;
+; 3.643 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 3.914      ;
+; 3.645 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; -0.003     ; 3.908      ;
+; 3.647 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst13|inst1 ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 3.918      ;
+; 3.649 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; -0.001     ; 3.914      ;
+; 3.649 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst4                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 3.916      ;
+; 3.653 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.921      ;
+; 3.654 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst7|inst1  ; register_OE:inst5|inst7                                        ; CLK          ; CLK         ; 0.000        ; -0.005     ; 3.915      ;
+; 3.663 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 3.930      ;
+; 3.672 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; -0.006     ; 3.932      ;
+; 3.683 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.951      ;
+; 3.683 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.951      ;
+; 3.689 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; -0.001     ; 3.954      ;
+; 3.692 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst3                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 3.959      ;
+; 3.693 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; -0.006     ; 3.953      ;
+; 3.699 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst12|inst1  ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 3.970      ;
+; 3.700 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.004      ; 3.970      ;
+; 3.705 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 3.976      ;
+; 3.712 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst3                                        ; CLK          ; CLK         ; 0.000        ; -0.002     ; 3.976      ;
+; 3.719 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.985      ;
+; 3.719 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst8|inst1  ; register_OE:inst5|inst6                                        ; CLK          ; CLK         ; 0.000        ; -0.014     ; 3.971      ;
+; 3.720 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.986      ;
+; 3.721 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst15|inst1 ; register_OE:inst5|inst15                                       ; CLK          ; CLK         ; 0.000        ; -0.015     ; 3.972      ;
+; 3.729 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.002      ; 3.997      ;
+; 3.731 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst2|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.003      ; 4.000      ;
+; 3.736 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.004      ; 4.006      ;
+; 3.736 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.002      ; 4.004      ;
+; 3.737 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst15|inst1 ; register_OE:inst5|inst15                                       ; CLK          ; CLK         ; 0.000        ; -0.008     ; 3.995      ;
+; 3.739 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst7|inst1  ; register_OE:inst5|inst7                                        ; CLK          ; CLK         ; 0.000        ; -0.012     ; 3.993      ;
+; 3.744 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; -0.006     ; 4.004      ;
+; 3.747 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst8|inst1  ; register_OE:inst5|inst7                                        ; CLK          ; CLK         ; 0.000        ; -0.014     ; 3.999      ;
+; 3.750 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst13|inst1 ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; -0.006     ; 4.010      ;
+; 3.754 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; 0.002      ; 4.022      ;
+; 3.754 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst6|inst1  ; register_OE:inst5|inst6                                        ; CLK          ; CLK         ; 0.000        ; -0.005     ; 4.015      ;
+; 3.757 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.023      ;
+; 3.765 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ; register_OE:inst5|inst15                                       ; CLK          ; CLK         ; 0.000        ; -0.011     ; 4.020      ;
+; 3.766 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 4.037      ;
+; 3.768 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 4.039      ;
+; 3.769 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 4.036      ;
+; 3.775 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst13|inst1 ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 4.046      ;
+; 3.782 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.048      ;
+; 3.789 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst8|inst1  ; register_OE:inst5|inst6                                        ; CLK          ; CLK         ; 0.000        ; -0.013     ; 4.042      ;
+; 3.789 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst7|inst1  ; register_OE:inst5|inst7                                        ; CLK          ; CLK         ; 0.000        ; -0.005     ; 4.050      ;
+; 3.797 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 4.065      ;
+; 3.803 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 4.074      ;
+; 3.805 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst8|inst1  ; register_OE:inst5|inst6                                        ; CLK          ; CLK         ; 0.000        ; -0.009     ; 4.062      ;
+; 3.805 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; -0.006     ; 4.065      ;
+; 3.823 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst3                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 4.090      ;
+; 3.832 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; 0.002      ; 4.100      ;
+; 3.846 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.004      ; 4.116      ;
+; 3.849 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; -0.004     ; 4.111      ;
+; 3.849 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst15|inst1 ; register_OE:inst5|inst15                                       ; CLK          ; CLK         ; 0.000        ; -0.015     ; 4.100      ;
+; 3.850 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 4.117      ;
+; 3.852 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.009      ; 4.127      ;
+; 3.859 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.125      ;
+; 3.859 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.125      ;
+; 3.859 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.003      ; 4.128      ;
+; 3.860 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 4.126      ;
+; 3.863 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst|inst1    ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.003      ; 4.132      ;
++-------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLK'                                                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLK   ; Rise       ; CLK                                                             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst11|inst1 ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; IE        ; CLK        ; 6.521  ; 6.521  ; Rise       ; CLK             ;
+; Ix[*]     ; CLK        ; 5.583  ; 5.583  ; Rise       ; CLK             ;
+;  Ix[0]    ; CLK        ; 5.583  ; 5.583  ; Rise       ; CLK             ;
+;  Ix[1]    ; CLK        ; 5.255  ; 5.255  ; Rise       ; CLK             ;
+;  Ix[2]    ; CLK        ; 4.887  ; 4.887  ; Rise       ; CLK             ;
+;  Ix[3]    ; CLK        ; 5.138  ; 5.138  ; Rise       ; CLK             ;
+; OP[*]     ; CLK        ; 9.251  ; 9.251  ; Rise       ; CLK             ;
+;  OP[0]    ; CLK        ; 8.846  ; 8.846  ; Rise       ; CLK             ;
+;  OP[1]    ; CLK        ; 9.251  ; 9.251  ; Rise       ; CLK             ;
+;  OP[2]    ; CLK        ; 8.183  ; 8.183  ; Rise       ; CLK             ;
+; S[*]      ; CLK        ; 8.868  ; 8.868  ; Rise       ; CLK             ;
+;  S[0]     ; CLK        ; 5.099  ; 5.099  ; Rise       ; CLK             ;
+;  S[1]     ; CLK        ; 8.868  ; 8.868  ; Rise       ; CLK             ;
+; WA[*]     ; CLK        ; 6.901  ; 6.901  ; Rise       ; CLK             ;
+;  WA[0]    ; CLK        ; 6.836  ; 6.836  ; Rise       ; CLK             ;
+;  WA[1]    ; CLK        ; 6.901  ; 6.901  ; Rise       ; CLK             ;
+;  WA[2]    ; CLK        ; 6.423  ; 6.423  ; Rise       ; CLK             ;
+; WAA[*]    ; CLK        ; 15.598 ; 15.598 ; Rise       ; CLK             ;
+;  WAA[0]   ; CLK        ; 15.241 ; 15.241 ; Rise       ; CLK             ;
+;  WAA[1]   ; CLK        ; 15.354 ; 15.354 ; Rise       ; CLK             ;
+;  WAA[2]   ; CLK        ; 15.598 ; 15.598 ; Rise       ; CLK             ;
+; WAAB[*]   ; CLK        ; 15.210 ; 15.210 ; Rise       ; CLK             ;
+;  WAAB[0]  ; CLK        ; 15.210 ; 15.210 ; Rise       ; CLK             ;
+;  WAAB[1]  ; CLK        ; 14.834 ; 14.834 ; Rise       ; CLK             ;
+;  WAAB[2]  ; CLK        ; 15.142 ; 15.142 ; Rise       ; CLK             ;
+; WE        ; CLK        ; 16.005 ; 16.005 ; Rise       ; CLK             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; IE        ; CLK        ; -4.119 ; -4.119 ; Rise       ; CLK             ;
+; Ix[*]     ; CLK        ; -3.546 ; -3.546 ; Rise       ; CLK             ;
+;  Ix[0]    ; CLK        ; -3.877 ; -3.877 ; Rise       ; CLK             ;
+;  Ix[1]    ; CLK        ; -3.945 ; -3.945 ; Rise       ; CLK             ;
+;  Ix[2]    ; CLK        ; -3.546 ; -3.546 ; Rise       ; CLK             ;
+;  Ix[3]    ; CLK        ; -4.166 ; -4.166 ; Rise       ; CLK             ;
+; OP[*]     ; CLK        ; -4.115 ; -4.115 ; Rise       ; CLK             ;
+;  OP[0]    ; CLK        ; -4.511 ; -4.511 ; Rise       ; CLK             ;
+;  OP[1]    ; CLK        ; -4.867 ; -4.867 ; Rise       ; CLK             ;
+;  OP[2]    ; CLK        ; -4.115 ; -4.115 ; Rise       ; CLK             ;
+; S[*]      ; CLK        ; 0.205  ; 0.205  ; Rise       ; CLK             ;
+;  S[0]     ; CLK        ; 0.205  ; 0.205  ; Rise       ; CLK             ;
+;  S[1]     ; CLK        ; -3.542 ; -3.542 ; Rise       ; CLK             ;
+; WA[*]     ; CLK        ; -4.245 ; -4.245 ; Rise       ; CLK             ;
+;  WA[0]    ; CLK        ; -4.658 ; -4.658 ; Rise       ; CLK             ;
+;  WA[1]    ; CLK        ; -4.725 ; -4.725 ; Rise       ; CLK             ;
+;  WA[2]    ; CLK        ; -4.245 ; -4.245 ; Rise       ; CLK             ;
+; WAA[*]    ; CLK        ; -7.106 ; -7.106 ; Rise       ; CLK             ;
+;  WAA[0]   ; CLK        ; -7.106 ; -7.106 ; Rise       ; CLK             ;
+;  WAA[1]   ; CLK        ; -7.218 ; -7.218 ; Rise       ; CLK             ;
+;  WAA[2]   ; CLK        ; -7.467 ; -7.467 ; Rise       ; CLK             ;
+; WAAB[*]   ; CLK        ; -7.405 ; -7.405 ; Rise       ; CLK             ;
+;  WAAB[0]  ; CLK        ; -7.782 ; -7.782 ; Rise       ; CLK             ;
+;  WAAB[1]  ; CLK        ; -7.405 ; -7.405 ; Rise       ; CLK             ;
+;  WAAB[2]  ; CLK        ; -7.726 ; -7.726 ; Rise       ; CLK             ;
+; WE        ; CLK        ; -5.256 ; -5.256 ; Rise       ; CLK             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; O[*]      ; CLK        ; 7.968 ; 7.968 ; Rise       ; CLK             ;
+;  O[0]     ; CLK        ; 7.277 ; 7.277 ; Rise       ; CLK             ;
+;  O[1]     ; CLK        ; 7.545 ; 7.545 ; Rise       ; CLK             ;
+;  O[2]     ; CLK        ; 7.546 ; 7.546 ; Rise       ; CLK             ;
+;  O[3]     ; CLK        ; 7.749 ; 7.749 ; Rise       ; CLK             ;
+;  O[4]     ; CLK        ; 7.604 ; 7.604 ; Rise       ; CLK             ;
+;  O[5]     ; CLK        ; 7.968 ; 7.968 ; Rise       ; CLK             ;
+;  O[6]     ; CLK        ; 7.881 ; 7.881 ; Rise       ; CLK             ;
+;  O[7]     ; CLK        ; 7.955 ; 7.955 ; Rise       ; CLK             ;
+;  O[8]     ; CLK        ; 7.514 ; 7.514 ; Rise       ; CLK             ;
+;  O[9]     ; CLK        ; 7.534 ; 7.534 ; Rise       ; CLK             ;
+;  O[10]    ; CLK        ; 7.843 ; 7.843 ; Rise       ; CLK             ;
+;  O[11]    ; CLK        ; 7.843 ; 7.843 ; Rise       ; CLK             ;
+;  O[12]    ; CLK        ; 7.653 ; 7.653 ; Rise       ; CLK             ;
+;  O[13]    ; CLK        ; 7.807 ; 7.807 ; Rise       ; CLK             ;
+;  O[14]    ; CLK        ; 7.817 ; 7.817 ; Rise       ; CLK             ;
+;  O[15]    ; CLK        ; 7.864 ; 7.864 ; Rise       ; CLK             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; O[*]      ; CLK        ; 7.277 ; 7.277 ; Rise       ; CLK             ;
+;  O[0]     ; CLK        ; 7.277 ; 7.277 ; Rise       ; CLK             ;
+;  O[1]     ; CLK        ; 7.545 ; 7.545 ; Rise       ; CLK             ;
+;  O[2]     ; CLK        ; 7.546 ; 7.546 ; Rise       ; CLK             ;
+;  O[3]     ; CLK        ; 7.749 ; 7.749 ; Rise       ; CLK             ;
+;  O[4]     ; CLK        ; 7.604 ; 7.604 ; Rise       ; CLK             ;
+;  O[5]     ; CLK        ; 7.968 ; 7.968 ; Rise       ; CLK             ;
+;  O[6]     ; CLK        ; 7.881 ; 7.881 ; Rise       ; CLK             ;
+;  O[7]     ; CLK        ; 7.955 ; 7.955 ; Rise       ; CLK             ;
+;  O[8]     ; CLK        ; 7.514 ; 7.514 ; Rise       ; CLK             ;
+;  O[9]     ; CLK        ; 7.534 ; 7.534 ; Rise       ; CLK             ;
+;  O[10]    ; CLK        ; 7.843 ; 7.843 ; Rise       ; CLK             ;
+;  O[11]    ; CLK        ; 7.843 ; 7.843 ; Rise       ; CLK             ;
+;  O[12]    ; CLK        ; 7.653 ; 7.653 ; Rise       ; CLK             ;
+;  O[13]    ; CLK        ; 7.807 ; 7.807 ; Rise       ; CLK             ;
+;  O[14]    ; CLK        ; 7.817 ; 7.817 ; Rise       ; CLK             ;
+;  O[15]    ; CLK        ; 7.864 ; 7.864 ; Rise       ; CLK             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; OE         ; O[0]        ; 4.751 ; 4.751 ; 4.751 ; 4.751 ;
+; OE         ; O[1]        ; 4.751 ; 4.751 ; 4.751 ; 4.751 ;
+; OE         ; O[2]        ; 4.765 ; 4.765 ; 4.765 ; 4.765 ;
+; OE         ; O[3]        ; 5.086 ; 5.086 ; 5.086 ; 5.086 ;
+; OE         ; O[4]        ; 4.771 ; 4.771 ; 4.771 ; 4.771 ;
+; OE         ; O[5]        ; 5.099 ; 5.099 ; 5.099 ; 5.099 ;
+; OE         ; O[6]        ; 5.090 ; 5.090 ; 5.090 ; 5.090 ;
+; OE         ; O[7]        ; 4.807 ; 4.807 ; 4.807 ; 4.807 ;
+; OE         ; O[8]        ; 5.326 ; 5.326 ; 5.326 ; 5.326 ;
+; OE         ; O[9]        ; 5.126 ; 5.126 ; 5.126 ; 5.126 ;
+; OE         ; O[10]       ; 5.090 ; 5.090 ; 5.090 ; 5.090 ;
+; OE         ; O[11]       ; 5.326 ; 5.326 ; 5.326 ; 5.326 ;
+; OE         ; O[12]       ; 4.797 ; 4.797 ; 4.797 ; 4.797 ;
+; OE         ; O[13]       ; 5.099 ; 5.099 ; 5.099 ; 5.099 ;
+; OE         ; O[14]       ; 5.106 ; 5.106 ; 5.106 ; 5.106 ;
+; OE         ; O[15]       ; 5.126 ; 5.126 ; 5.126 ; 5.126 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; OE         ; O[0]        ; 4.751 ; 4.751 ; 4.751 ; 4.751 ;
+; OE         ; O[1]        ; 4.751 ; 4.751 ; 4.751 ; 4.751 ;
+; OE         ; O[2]        ; 4.765 ; 4.765 ; 4.765 ; 4.765 ;
+; OE         ; O[3]        ; 5.086 ; 5.086 ; 5.086 ; 5.086 ;
+; OE         ; O[4]        ; 4.771 ; 4.771 ; 4.771 ; 4.771 ;
+; OE         ; O[5]        ; 5.099 ; 5.099 ; 5.099 ; 5.099 ;
+; OE         ; O[6]        ; 5.090 ; 5.090 ; 5.090 ; 5.090 ;
+; OE         ; O[7]        ; 4.807 ; 4.807 ; 4.807 ; 4.807 ;
+; OE         ; O[8]        ; 5.326 ; 5.326 ; 5.326 ; 5.326 ;
+; OE         ; O[9]        ; 5.126 ; 5.126 ; 5.126 ; 5.126 ;
+; OE         ; O[10]       ; 5.090 ; 5.090 ; 5.090 ; 5.090 ;
+; OE         ; O[11]       ; 5.326 ; 5.326 ; 5.326 ; 5.326 ;
+; OE         ; O[12]       ; 4.797 ; 4.797 ; 4.797 ; 4.797 ;
+; OE         ; O[13]       ; 5.099 ; 5.099 ; 5.099 ; 5.099 ;
+; OE         ; O[14]       ; 5.106 ; 5.106 ; 5.106 ; 5.106 ;
+; OE         ; O[15]       ; 5.126 ; 5.126 ; 5.126 ; 5.126 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLK   ; -3.308 ; -406.270      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; CLK   ; 1.212 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; CLK   ; -1.380 ; -145.380              ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLK'                                                                                                                                                                                         ;
++--------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                       ; To Node                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.308 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.343      ;
+; -3.306 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.341      ;
+; -3.302 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.334      ;
+; -3.300 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.332      ;
+; -3.289 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.009      ; 4.330      ;
+; -3.289 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.009      ; 4.330      ;
+; -3.283 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.006      ; 4.321      ;
+; -3.283 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.006      ; 4.321      ;
+; -3.277 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.010      ; 4.319      ;
+; -3.277 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.010      ; 4.319      ;
+; -3.271 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 4.310      ;
+; -3.271 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 4.310      ;
+; -3.267 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 4.306      ;
+; -3.267 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 4.306      ;
+; -3.266 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.301      ;
+; -3.264 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.299      ;
+; -3.261 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.004      ; 4.297      ;
+; -3.261 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.004      ; 4.297      ;
+; -3.258 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.293      ;
+; -3.256 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.291      ;
+; -3.247 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.009      ; 4.288      ;
+; -3.247 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.009      ; 4.288      ;
+; -3.239 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.009      ; 4.280      ;
+; -3.239 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.009      ; 4.280      ;
+; -3.235 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.010      ; 4.277      ;
+; -3.235 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.010      ; 4.277      ;
+; -3.227 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.010      ; 4.269      ;
+; -3.227 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.010      ; 4.269      ;
+; -3.225 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 4.264      ;
+; -3.225 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 4.264      ;
+; -3.224 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.006     ; 4.250      ;
+; -3.222 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.006     ; 4.248      ;
+; -3.217 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 4.256      ;
+; -3.217 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 4.256      ;
+; -3.212 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.247      ;
+; -3.210 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.242      ;
+; -3.209 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.004      ; 4.245      ;
+; -3.208 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.243      ;
+; -3.208 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.240      ;
+; -3.207 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.004      ; 4.243      ;
+; -3.206 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.238      ;
+; -3.205 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.237      ;
+; -3.205 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.237      ;
+; -3.202 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.234      ;
+; -3.195 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.005     ; 4.222      ;
+; -3.193 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.228      ;
+; -3.193 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.228      ;
+; -3.193 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.006     ; 4.219      ;
+; -3.193 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.005     ; 4.220      ;
+; -3.193 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.001      ; 4.226      ;
+; -3.193 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.001      ; 4.226      ;
+; -3.191 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.006      ; 4.229      ;
+; -3.191 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.006      ; 4.229      ;
+; -3.191 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.006     ; 4.217      ;
+; -3.191 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.006      ; 4.229      ;
+; -3.191 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.006      ; 4.229      ;
+; -3.188 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.220      ;
+; -3.187 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.219      ;
+; -3.187 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.219      ;
+; -3.187 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.006     ; 4.213      ;
+; -3.186 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.218      ;
+; -3.185 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.220      ;
+; -3.185 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst3|inst1  ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.220      ;
+; -3.185 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.006     ; 4.211      ;
+; -3.183 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; -0.002     ; 4.213      ;
+; -3.183 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; -0.002     ; 4.213      ;
+; -3.179 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 4.218      ;
+; -3.179 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.007      ; 4.218      ;
+; -3.178 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.003     ; 4.207      ;
+; -3.177 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.209      ;
+; -3.176 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.001      ; 4.209      ;
+; -3.176 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.001      ; 4.209      ;
+; -3.176 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.003     ; 4.205      ;
+; -3.175 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.207      ;
+; -3.174 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.206      ;
+; -3.174 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.206      ;
+; -3.172 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.204      ;
+; -3.170 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.202      ;
+; -3.170 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.205      ;
+; -3.169 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.006      ; 4.207      ;
+; -3.169 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.006      ; 4.207      ;
+; -3.169 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.004      ; 4.205      ;
+; -3.169 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.004      ; 4.205      ;
+; -3.168 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.200      ;
+; -3.168 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.200      ;
+; -3.166 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.201      ;
+; -3.165 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst15|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.003     ; 4.194      ;
+; -3.164 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.002      ; 4.198      ;
+; -3.164 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.002      ; 4.198      ;
+; -3.163 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst15|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; -0.003     ; 4.192      ;
+; -3.162 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.001      ; 4.195      ;
+; -3.162 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.001      ; 4.195      ;
+; -3.162 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.197      ;
+; -3.161 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.193      ;
+; -3.160 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.004      ; 4.196      ;
+; -3.159 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst13|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 4.191      ;
+; -3.159 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.194      ;
+; -3.159 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.194      ;
+; -3.158 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.003      ; 4.193      ;
+; -3.158 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst12|inst1 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst3|inst1 ; CLK          ; CLK         ; 1.000        ; 0.004      ; 4.194      ;
++--------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLK'                                                                                                                                                                                         ;
++-------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                       ; To Node                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.212 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.365      ;
+; 1.269 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.422      ;
+; 1.357 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.510      ;
+; 1.364 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.518      ;
+; 1.378 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.530      ;
+; 1.421 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.575      ;
+; 1.423 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.574      ;
+; 1.427 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; -0.003     ; 1.576      ;
+; 1.434 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.585      ;
+; 1.439 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.589      ;
+; 1.458 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst12|inst1  ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.614      ;
+; 1.458 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.614      ;
+; 1.459 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; -0.003     ; 1.608      ;
+; 1.465 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.618      ;
+; 1.468 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.621      ;
+; 1.499 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.651      ;
+; 1.522 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst2|inst1   ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.676      ;
+; 1.522 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.675      ;
+; 1.525 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.678      ;
+; 1.527 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.680      ;
+; 1.528 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.681      ;
+; 1.536 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.689      ;
+; 1.541 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.692      ;
+; 1.542 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.695      ;
+; 1.546 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.700      ;
+; 1.549 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.702      ;
+; 1.550 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.703      ;
+; 1.551 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.704      ;
+; 1.552 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.703      ;
+; 1.556 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst4                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.709      ;
+; 1.557 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.707      ;
+; 1.567 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst4                                        ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.718      ;
+; 1.568 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.724      ;
+; 1.570 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.723      ;
+; 1.576 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.726      ;
+; 1.579 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst7|inst1  ; register_OE:inst5|inst7                                        ; CLK          ; CLK         ; 0.000        ; -0.004     ; 1.727      ;
+; 1.581 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst4                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.734      ;
+; 1.584 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.734      ;
+; 1.586 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.739      ;
+; 1.587 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 1.744      ;
+; 1.590 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst14|inst1  ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.746      ;
+; 1.591 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.008      ; 1.751      ;
+; 1.594 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.750      ;
+; 1.598 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.751      ;
+; 1.599 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.752      ;
+; 1.601 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst13|inst1 ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.757      ;
+; 1.602 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; -0.005     ; 1.749      ;
+; 1.604 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.760      ;
+; 1.606 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.759      ;
+; 1.607 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.760      ;
+; 1.607 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; -0.005     ; 1.754      ;
+; 1.608 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.761      ;
+; 1.608 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.758      ;
+; 1.610 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.005      ; 1.767      ;
+; 1.612 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst8|inst1  ; register_OE:inst5|inst6                                        ; CLK          ; CLK         ; 0.000        ; -0.013     ; 1.751      ;
+; 1.615 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst1                                        ; CLK          ; CLK         ; 0.000        ; -0.002     ; 1.765      ;
+; 1.616 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.772      ;
+; 1.620 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst6|inst1  ; register_OE:inst5|inst6                                        ; CLK          ; CLK         ; 0.000        ; -0.004     ; 1.768      ;
+; 1.621 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst3                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.774      ;
+; 1.627 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; -0.005     ; 1.774      ;
+; 1.628 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst12|inst1  ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.784      ;
+; 1.629 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; -0.005     ; 1.776      ;
+; 1.631 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst7|inst1  ; register_OE:inst5|inst7                                        ; CLK          ; CLK         ; 0.000        ; -0.004     ; 1.779      ;
+; 1.631 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.783      ;
+; 1.632 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.005      ; 1.789      ;
+; 1.632 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst3                                        ; CLK          ; CLK         ; 0.000        ; -0.001     ; 1.783      ;
+; 1.634 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.788      ;
+; 1.634 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.786      ;
+; 1.634 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; -0.005     ; 1.781      ;
+; 1.635 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.788      ;
+; 1.637 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.789      ;
+; 1.638 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst1|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.790      ;
+; 1.640 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst2|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.794      ;
+; 1.641 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.794      ;
+; 1.642 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst13|inst1  ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.798      ;
+; 1.645 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst8|inst1  ; register_OE:inst5|inst6                                        ; CLK          ; CLK         ; 0.000        ; -0.013     ; 1.784      ;
+; 1.646 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst4|inst1  ; register_OE:inst5|inst3                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.799      ;
+; 1.648 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.801      ;
+; 1.654 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst13|inst1 ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; 0.004      ; 1.810      ;
+; 1.656 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; -0.005     ; 1.803      ;
+; 1.659 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst15|inst1 ; register_OE:inst5|inst15                                       ; CLK          ; CLK         ; 0.000        ; -0.008     ; 1.803      ;
+; 1.664 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst12|inst1 ; register_OE:inst5|inst12                                       ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.816      ;
+; 1.664 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.818      ;
+; 1.665 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.008      ; 1.825      ;
+; 1.666 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst7|inst1  ; register_OE:inst5|inst7                                        ; CLK          ; CLK         ; 0.000        ; -0.011     ; 1.807      ;
+; 1.674 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst6|RFC_1bit:inst8|inst1  ; register_OE:inst5|inst7                                        ; CLK          ; CLK         ; 0.000        ; -0.013     ; 1.813      ;
+; 1.677 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst13|inst1 ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; -0.006     ; 1.823      ;
+; 1.678 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst8|inst1  ; register_OE:inst5|inst6                                        ; CLK          ; CLK         ; 0.000        ; -0.012     ; 1.818      ;
+; 1.679 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst4|inst1   ; register_OE:inst5|inst4                                        ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.833      ;
+; 1.680 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; -0.003     ; 1.829      ;
+; 1.681 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst|inst1   ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.833      ;
+; 1.682 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst|RFC_1bit:inst|inst1    ; register_OE:inst5|inst                                         ; CLK          ; CLK         ; 0.000        ; 0.002      ; 1.836      ;
+; 1.682 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst13|inst1 ; register_OE:inst5|inst11                                       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.835      ;
+; 1.683 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst1|inst1  ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1 ; CLK          ; CLK         ; 0.000        ; -0.003     ; 1.832      ;
+; 1.685 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1   ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst|inst1  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 1.837      ;
+; 1.686 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst5|RFC_1bit:inst2|inst1  ; register_OE:inst5|inst2                                        ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.839      ;
+; 1.687 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ; register_OE:inst5|inst15                                       ; CLK          ; CLK         ; 0.000        ; -0.011     ; 1.828      ;
+; 1.687 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst15|inst1 ; register_OE:inst5|inst15                                       ; CLK          ; CLK         ; 0.000        ; -0.008     ; 1.831      ;
+; 1.687 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst7|RFC_1bit:inst14|inst1 ; register_OE:inst5|inst14                                       ; CLK          ; CLK         ; 0.000        ; -0.004     ; 1.835      ;
+; 1.688 ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ; register_OE:inst5|inst13                                       ; CLK          ; CLK         ; 0.000        ; 0.001      ; 1.841      ;
++-------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLK'                                                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLK   ; Rise       ; CLK                                                             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst1|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst2|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst11|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst12|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst13|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst14|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst15|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst1|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst2|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst3|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst4|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst5|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst6|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst7|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst8|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst9|inst1  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst3|RFC_1bit:inst|inst1   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst10|inst1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK   ; Rise       ; RFC:inst|RFC_8x16bit:inst|RFC_16bit:inst4|RFC_1bit:inst11|inst1 ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; IE        ; CLK        ; 3.348 ; 3.348 ; Rise       ; CLK             ;
+; Ix[*]     ; CLK        ; 2.875 ; 2.875 ; Rise       ; CLK             ;
+;  Ix[0]    ; CLK        ; 2.875 ; 2.875 ; Rise       ; CLK             ;
+;  Ix[1]    ; CLK        ; 2.756 ; 2.756 ; Rise       ; CLK             ;
+;  Ix[2]    ; CLK        ; 2.574 ; 2.574 ; Rise       ; CLK             ;
+;  Ix[3]    ; CLK        ; 2.657 ; 2.657 ; Rise       ; CLK             ;
+; OP[*]     ; CLK        ; 4.513 ; 4.513 ; Rise       ; CLK             ;
+;  OP[0]    ; CLK        ; 4.275 ; 4.275 ; Rise       ; CLK             ;
+;  OP[1]    ; CLK        ; 4.513 ; 4.513 ; Rise       ; CLK             ;
+;  OP[2]    ; CLK        ; 4.020 ; 4.020 ; Rise       ; CLK             ;
+; S[*]      ; CLK        ; 4.337 ; 4.337 ; Rise       ; CLK             ;
+;  S[0]     ; CLK        ; 2.038 ; 2.038 ; Rise       ; CLK             ;
+;  S[1]     ; CLK        ; 4.337 ; 4.337 ; Rise       ; CLK             ;
+; WA[*]     ; CLK        ; 3.596 ; 3.596 ; Rise       ; CLK             ;
+;  WA[0]    ; CLK        ; 3.590 ; 3.590 ; Rise       ; CLK             ;
+;  WA[1]    ; CLK        ; 3.596 ; 3.596 ; Rise       ; CLK             ;
+;  WA[2]    ; CLK        ; 3.340 ; 3.340 ; Rise       ; CLK             ;
+; WAA[*]    ; CLK        ; 7.338 ; 7.338 ; Rise       ; CLK             ;
+;  WAA[0]   ; CLK        ; 7.161 ; 7.161 ; Rise       ; CLK             ;
+;  WAA[1]   ; CLK        ; 7.203 ; 7.203 ; Rise       ; CLK             ;
+;  WAA[2]   ; CLK        ; 7.338 ; 7.338 ; Rise       ; CLK             ;
+; WAAB[*]   ; CLK        ; 7.107 ; 7.107 ; Rise       ; CLK             ;
+;  WAAB[0]  ; CLK        ; 7.089 ; 7.089 ; Rise       ; CLK             ;
+;  WAAB[1]  ; CLK        ; 6.913 ; 6.913 ; Rise       ; CLK             ;
+;  WAAB[2]  ; CLK        ; 7.107 ; 7.107 ; Rise       ; CLK             ;
+; WE        ; CLK        ; 7.526 ; 7.526 ; Rise       ; CLK             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; IE        ; CLK        ; -2.187 ; -2.187 ; Rise       ; CLK             ;
+; Ix[*]     ; CLK        ; -1.929 ; -1.929 ; Rise       ; CLK             ;
+;  Ix[0]    ; CLK        ; -2.084 ; -2.084 ; Rise       ; CLK             ;
+;  Ix[1]    ; CLK        ; -2.124 ; -2.124 ; Rise       ; CLK             ;
+;  Ix[2]    ; CLK        ; -1.929 ; -1.929 ; Rise       ; CLK             ;
+;  Ix[3]    ; CLK        ; -2.194 ; -2.194 ; Rise       ; CLK             ;
+; OP[*]     ; CLK        ; -2.173 ; -2.173 ; Rise       ; CLK             ;
+;  OP[0]    ; CLK        ; -2.356 ; -2.356 ; Rise       ; CLK             ;
+;  OP[1]    ; CLK        ; -2.507 ; -2.507 ; Rise       ; CLK             ;
+;  OP[2]    ; CLK        ; -2.173 ; -2.173 ; Rise       ; CLK             ;
+; S[*]      ; CLK        ; 0.374  ; 0.374  ; Rise       ; CLK             ;
+;  S[0]     ; CLK        ; 0.374  ; 0.374  ; Rise       ; CLK             ;
+;  S[1]     ; CLK        ; -1.923 ; -1.923 ; Rise       ; CLK             ;
+; WA[*]     ; CLK        ; -2.302 ; -2.302 ; Rise       ; CLK             ;
+;  WA[0]    ; CLK        ; -2.525 ; -2.525 ; Rise       ; CLK             ;
+;  WA[1]    ; CLK        ; -2.560 ; -2.560 ; Rise       ; CLK             ;
+;  WA[2]    ; CLK        ; -2.302 ; -2.302 ; Rise       ; CLK             ;
+; WAA[*]    ; CLK        ; -3.506 ; -3.506 ; Rise       ; CLK             ;
+;  WAA[0]   ; CLK        ; -3.506 ; -3.506 ; Rise       ; CLK             ;
+;  WAA[1]   ; CLK        ; -3.528 ; -3.528 ; Rise       ; CLK             ;
+;  WAA[2]   ; CLK        ; -3.663 ; -3.663 ; Rise       ; CLK             ;
+; WAAB[*]   ; CLK        ; -3.628 ; -3.628 ; Rise       ; CLK             ;
+;  WAAB[0]  ; CLK        ; -3.789 ; -3.789 ; Rise       ; CLK             ;
+;  WAAB[1]  ; CLK        ; -3.628 ; -3.628 ; Rise       ; CLK             ;
+;  WAAB[2]  ; CLK        ; -3.792 ; -3.792 ; Rise       ; CLK             ;
+; WE        ; CLK        ; -2.819 ; -2.819 ; Rise       ; CLK             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; O[*]      ; CLK        ; 4.445 ; 4.445 ; Rise       ; CLK             ;
+;  O[0]     ; CLK        ; 4.082 ; 4.082 ; Rise       ; CLK             ;
+;  O[1]     ; CLK        ; 4.213 ; 4.213 ; Rise       ; CLK             ;
+;  O[2]     ; CLK        ; 4.216 ; 4.216 ; Rise       ; CLK             ;
+;  O[3]     ; CLK        ; 4.288 ; 4.288 ; Rise       ; CLK             ;
+;  O[4]     ; CLK        ; 4.254 ; 4.254 ; Rise       ; CLK             ;
+;  O[5]     ; CLK        ; 4.391 ; 4.391 ; Rise       ; CLK             ;
+;  O[6]     ; CLK        ; 4.375 ; 4.375 ; Rise       ; CLK             ;
+;  O[7]     ; CLK        ; 4.445 ; 4.445 ; Rise       ; CLK             ;
+;  O[8]     ; CLK        ; 4.197 ; 4.197 ; Rise       ; CLK             ;
+;  O[9]     ; CLK        ; 4.213 ; 4.213 ; Rise       ; CLK             ;
+;  O[10]    ; CLK        ; 4.358 ; 4.358 ; Rise       ; CLK             ;
+;  O[11]    ; CLK        ; 4.364 ; 4.364 ; Rise       ; CLK             ;
+;  O[12]    ; CLK        ; 4.288 ; 4.288 ; Rise       ; CLK             ;
+;  O[13]    ; CLK        ; 4.352 ; 4.352 ; Rise       ; CLK             ;
+;  O[14]    ; CLK        ; 4.341 ; 4.341 ; Rise       ; CLK             ;
+;  O[15]    ; CLK        ; 4.378 ; 4.378 ; Rise       ; CLK             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; O[*]      ; CLK        ; 4.082 ; 4.082 ; Rise       ; CLK             ;
+;  O[0]     ; CLK        ; 4.082 ; 4.082 ; Rise       ; CLK             ;
+;  O[1]     ; CLK        ; 4.213 ; 4.213 ; Rise       ; CLK             ;
+;  O[2]     ; CLK        ; 4.216 ; 4.216 ; Rise       ; CLK             ;
+;  O[3]     ; CLK        ; 4.288 ; 4.288 ; Rise       ; CLK             ;
+;  O[4]     ; CLK        ; 4.254 ; 4.254 ; Rise       ; CLK             ;
+;  O[5]     ; CLK        ; 4.391 ; 4.391 ; Rise       ; CLK             ;
+;  O[6]     ; CLK        ; 4.375 ; 4.375 ; Rise       ; CLK             ;
+;  O[7]     ; CLK        ; 4.445 ; 4.445 ; Rise       ; CLK             ;
+;  O[8]     ; CLK        ; 4.197 ; 4.197 ; Rise       ; CLK             ;
+;  O[9]     ; CLK        ; 4.213 ; 4.213 ; Rise       ; CLK             ;
+;  O[10]    ; CLK        ; 4.358 ; 4.358 ; Rise       ; CLK             ;
+;  O[11]    ; CLK        ; 4.364 ; 4.364 ; Rise       ; CLK             ;
+;  O[12]    ; CLK        ; 4.288 ; 4.288 ; Rise       ; CLK             ;
+;  O[13]    ; CLK        ; 4.352 ; 4.352 ; Rise       ; CLK             ;
+;  O[14]    ; CLK        ; 4.341 ; 4.341 ; Rise       ; CLK             ;
+;  O[15]    ; CLK        ; 4.378 ; 4.378 ; Rise       ; CLK             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; OE         ; O[0]        ; 2.519 ; 2.519 ; 2.519 ; 2.519 ;
+; OE         ; O[1]        ; 2.519 ; 2.519 ; 2.519 ; 2.519 ;
+; OE         ; O[2]        ; 2.534 ; 2.534 ; 2.534 ; 2.534 ;
+; OE         ; O[3]        ; 2.719 ; 2.719 ; 2.719 ; 2.719 ;
+; OE         ; O[4]        ; 2.539 ; 2.539 ; 2.539 ; 2.539 ;
+; OE         ; O[5]        ; 2.735 ; 2.735 ; 2.735 ; 2.735 ;
+; OE         ; O[6]        ; 2.727 ; 2.727 ; 2.727 ; 2.727 ;
+; OE         ; O[7]        ; 2.577 ; 2.577 ; 2.577 ; 2.577 ;
+; OE         ; O[8]        ; 2.835 ; 2.835 ; 2.835 ; 2.835 ;
+; OE         ; O[9]        ; 2.759 ; 2.759 ; 2.759 ; 2.759 ;
+; OE         ; O[10]       ; 2.727 ; 2.727 ; 2.727 ; 2.727 ;
+; OE         ; O[11]       ; 2.835 ; 2.835 ; 2.835 ; 2.835 ;
+; OE         ; O[12]       ; 2.567 ; 2.567 ; 2.567 ; 2.567 ;
+; OE         ; O[13]       ; 2.735 ; 2.735 ; 2.735 ; 2.735 ;
+; OE         ; O[14]       ; 2.739 ; 2.739 ; 2.739 ; 2.739 ;
+; OE         ; O[15]       ; 2.759 ; 2.759 ; 2.759 ; 2.759 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; OE         ; O[0]        ; 2.519 ; 2.519 ; 2.519 ; 2.519 ;
+; OE         ; O[1]        ; 2.519 ; 2.519 ; 2.519 ; 2.519 ;
+; OE         ; O[2]        ; 2.534 ; 2.534 ; 2.534 ; 2.534 ;
+; OE         ; O[3]        ; 2.719 ; 2.719 ; 2.719 ; 2.719 ;
+; OE         ; O[4]        ; 2.539 ; 2.539 ; 2.539 ; 2.539 ;
+; OE         ; O[5]        ; 2.735 ; 2.735 ; 2.735 ; 2.735 ;
+; OE         ; O[6]        ; 2.727 ; 2.727 ; 2.727 ; 2.727 ;
+; OE         ; O[7]        ; 2.577 ; 2.577 ; 2.577 ; 2.577 ;
+; OE         ; O[8]        ; 2.835 ; 2.835 ; 2.835 ; 2.835 ;
+; OE         ; O[9]        ; 2.759 ; 2.759 ; 2.759 ; 2.759 ;
+; OE         ; O[10]       ; 2.727 ; 2.727 ; 2.727 ; 2.727 ;
+; OE         ; O[11]       ; 2.835 ; 2.835 ; 2.835 ; 2.835 ;
+; OE         ; O[12]       ; 2.567 ; 2.567 ; 2.567 ; 2.567 ;
+; OE         ; O[13]       ; 2.735 ; 2.735 ; 2.735 ; 2.735 ;
+; OE         ; O[14]       ; 2.739 ; 2.739 ; 2.739 ; 2.739 ;
+; OE         ; O[15]       ; 2.759 ; 2.759 ; 2.759 ; 2.759 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -8.742    ; 1.212 ; N/A      ; N/A     ; -1.380              ;
+;  CLK             ; -8.742    ; 1.212 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -1115.756 ; 0.0   ; 0.0      ; 0.0     ; -145.38             ;
+;  CLK             ; -1115.756 ; 0.000 ; N/A      ; N/A     ; -145.380            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; IE        ; CLK        ; 6.521  ; 6.521  ; Rise       ; CLK             ;
+; Ix[*]     ; CLK        ; 5.583  ; 5.583  ; Rise       ; CLK             ;
+;  Ix[0]    ; CLK        ; 5.583  ; 5.583  ; Rise       ; CLK             ;
+;  Ix[1]    ; CLK        ; 5.255  ; 5.255  ; Rise       ; CLK             ;
+;  Ix[2]    ; CLK        ; 4.887  ; 4.887  ; Rise       ; CLK             ;
+;  Ix[3]    ; CLK        ; 5.138  ; 5.138  ; Rise       ; CLK             ;
+; OP[*]     ; CLK        ; 9.251  ; 9.251  ; Rise       ; CLK             ;
+;  OP[0]    ; CLK        ; 8.846  ; 8.846  ; Rise       ; CLK             ;
+;  OP[1]    ; CLK        ; 9.251  ; 9.251  ; Rise       ; CLK             ;
+;  OP[2]    ; CLK        ; 8.183  ; 8.183  ; Rise       ; CLK             ;
+; S[*]      ; CLK        ; 8.868  ; 8.868  ; Rise       ; CLK             ;
+;  S[0]     ; CLK        ; 5.099  ; 5.099  ; Rise       ; CLK             ;
+;  S[1]     ; CLK        ; 8.868  ; 8.868  ; Rise       ; CLK             ;
+; WA[*]     ; CLK        ; 6.901  ; 6.901  ; Rise       ; CLK             ;
+;  WA[0]    ; CLK        ; 6.836  ; 6.836  ; Rise       ; CLK             ;
+;  WA[1]    ; CLK        ; 6.901  ; 6.901  ; Rise       ; CLK             ;
+;  WA[2]    ; CLK        ; 6.423  ; 6.423  ; Rise       ; CLK             ;
+; WAA[*]    ; CLK        ; 15.598 ; 15.598 ; Rise       ; CLK             ;
+;  WAA[0]   ; CLK        ; 15.241 ; 15.241 ; Rise       ; CLK             ;
+;  WAA[1]   ; CLK        ; 15.354 ; 15.354 ; Rise       ; CLK             ;
+;  WAA[2]   ; CLK        ; 15.598 ; 15.598 ; Rise       ; CLK             ;
+; WAAB[*]   ; CLK        ; 15.210 ; 15.210 ; Rise       ; CLK             ;
+;  WAAB[0]  ; CLK        ; 15.210 ; 15.210 ; Rise       ; CLK             ;
+;  WAAB[1]  ; CLK        ; 14.834 ; 14.834 ; Rise       ; CLK             ;
+;  WAAB[2]  ; CLK        ; 15.142 ; 15.142 ; Rise       ; CLK             ;
+; WE        ; CLK        ; 16.005 ; 16.005 ; Rise       ; CLK             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; IE        ; CLK        ; -2.187 ; -2.187 ; Rise       ; CLK             ;
+; Ix[*]     ; CLK        ; -1.929 ; -1.929 ; Rise       ; CLK             ;
+;  Ix[0]    ; CLK        ; -2.084 ; -2.084 ; Rise       ; CLK             ;
+;  Ix[1]    ; CLK        ; -2.124 ; -2.124 ; Rise       ; CLK             ;
+;  Ix[2]    ; CLK        ; -1.929 ; -1.929 ; Rise       ; CLK             ;
+;  Ix[3]    ; CLK        ; -2.194 ; -2.194 ; Rise       ; CLK             ;
+; OP[*]     ; CLK        ; -2.173 ; -2.173 ; Rise       ; CLK             ;
+;  OP[0]    ; CLK        ; -2.356 ; -2.356 ; Rise       ; CLK             ;
+;  OP[1]    ; CLK        ; -2.507 ; -2.507 ; Rise       ; CLK             ;
+;  OP[2]    ; CLK        ; -2.173 ; -2.173 ; Rise       ; CLK             ;
+; S[*]      ; CLK        ; 0.374  ; 0.374  ; Rise       ; CLK             ;
+;  S[0]     ; CLK        ; 0.374  ; 0.374  ; Rise       ; CLK             ;
+;  S[1]     ; CLK        ; -1.923 ; -1.923 ; Rise       ; CLK             ;
+; WA[*]     ; CLK        ; -2.302 ; -2.302 ; Rise       ; CLK             ;
+;  WA[0]    ; CLK        ; -2.525 ; -2.525 ; Rise       ; CLK             ;
+;  WA[1]    ; CLK        ; -2.560 ; -2.560 ; Rise       ; CLK             ;
+;  WA[2]    ; CLK        ; -2.302 ; -2.302 ; Rise       ; CLK             ;
+; WAA[*]    ; CLK        ; -3.506 ; -3.506 ; Rise       ; CLK             ;
+;  WAA[0]   ; CLK        ; -3.506 ; -3.506 ; Rise       ; CLK             ;
+;  WAA[1]   ; CLK        ; -3.528 ; -3.528 ; Rise       ; CLK             ;
+;  WAA[2]   ; CLK        ; -3.663 ; -3.663 ; Rise       ; CLK             ;
+; WAAB[*]   ; CLK        ; -3.628 ; -3.628 ; Rise       ; CLK             ;
+;  WAAB[0]  ; CLK        ; -3.789 ; -3.789 ; Rise       ; CLK             ;
+;  WAAB[1]  ; CLK        ; -3.628 ; -3.628 ; Rise       ; CLK             ;
+;  WAAB[2]  ; CLK        ; -3.792 ; -3.792 ; Rise       ; CLK             ;
+; WE        ; CLK        ; -2.819 ; -2.819 ; Rise       ; CLK             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; O[*]      ; CLK        ; 7.968 ; 7.968 ; Rise       ; CLK             ;
+;  O[0]     ; CLK        ; 7.277 ; 7.277 ; Rise       ; CLK             ;
+;  O[1]     ; CLK        ; 7.545 ; 7.545 ; Rise       ; CLK             ;
+;  O[2]     ; CLK        ; 7.546 ; 7.546 ; Rise       ; CLK             ;
+;  O[3]     ; CLK        ; 7.749 ; 7.749 ; Rise       ; CLK             ;
+;  O[4]     ; CLK        ; 7.604 ; 7.604 ; Rise       ; CLK             ;
+;  O[5]     ; CLK        ; 7.968 ; 7.968 ; Rise       ; CLK             ;
+;  O[6]     ; CLK        ; 7.881 ; 7.881 ; Rise       ; CLK             ;
+;  O[7]     ; CLK        ; 7.955 ; 7.955 ; Rise       ; CLK             ;
+;  O[8]     ; CLK        ; 7.514 ; 7.514 ; Rise       ; CLK             ;
+;  O[9]     ; CLK        ; 7.534 ; 7.534 ; Rise       ; CLK             ;
+;  O[10]    ; CLK        ; 7.843 ; 7.843 ; Rise       ; CLK             ;
+;  O[11]    ; CLK        ; 7.843 ; 7.843 ; Rise       ; CLK             ;
+;  O[12]    ; CLK        ; 7.653 ; 7.653 ; Rise       ; CLK             ;
+;  O[13]    ; CLK        ; 7.807 ; 7.807 ; Rise       ; CLK             ;
+;  O[14]    ; CLK        ; 7.817 ; 7.817 ; Rise       ; CLK             ;
+;  O[15]    ; CLK        ; 7.864 ; 7.864 ; Rise       ; CLK             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; O[*]      ; CLK        ; 4.082 ; 4.082 ; Rise       ; CLK             ;
+;  O[0]     ; CLK        ; 4.082 ; 4.082 ; Rise       ; CLK             ;
+;  O[1]     ; CLK        ; 4.213 ; 4.213 ; Rise       ; CLK             ;
+;  O[2]     ; CLK        ; 4.216 ; 4.216 ; Rise       ; CLK             ;
+;  O[3]     ; CLK        ; 4.288 ; 4.288 ; Rise       ; CLK             ;
+;  O[4]     ; CLK        ; 4.254 ; 4.254 ; Rise       ; CLK             ;
+;  O[5]     ; CLK        ; 4.391 ; 4.391 ; Rise       ; CLK             ;
+;  O[6]     ; CLK        ; 4.375 ; 4.375 ; Rise       ; CLK             ;
+;  O[7]     ; CLK        ; 4.445 ; 4.445 ; Rise       ; CLK             ;
+;  O[8]     ; CLK        ; 4.197 ; 4.197 ; Rise       ; CLK             ;
+;  O[9]     ; CLK        ; 4.213 ; 4.213 ; Rise       ; CLK             ;
+;  O[10]    ; CLK        ; 4.358 ; 4.358 ; Rise       ; CLK             ;
+;  O[11]    ; CLK        ; 4.364 ; 4.364 ; Rise       ; CLK             ;
+;  O[12]    ; CLK        ; 4.288 ; 4.288 ; Rise       ; CLK             ;
+;  O[13]    ; CLK        ; 4.352 ; 4.352 ; Rise       ; CLK             ;
+;  O[14]    ; CLK        ; 4.341 ; 4.341 ; Rise       ; CLK             ;
+;  O[15]    ; CLK        ; 4.378 ; 4.378 ; Rise       ; CLK             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Progagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; OE         ; O[0]        ; 4.751 ; 4.751 ; 4.751 ; 4.751 ;
+; OE         ; O[1]        ; 4.751 ; 4.751 ; 4.751 ; 4.751 ;
+; OE         ; O[2]        ; 4.765 ; 4.765 ; 4.765 ; 4.765 ;
+; OE         ; O[3]        ; 5.086 ; 5.086 ; 5.086 ; 5.086 ;
+; OE         ; O[4]        ; 4.771 ; 4.771 ; 4.771 ; 4.771 ;
+; OE         ; O[5]        ; 5.099 ; 5.099 ; 5.099 ; 5.099 ;
+; OE         ; O[6]        ; 5.090 ; 5.090 ; 5.090 ; 5.090 ;
+; OE         ; O[7]        ; 4.807 ; 4.807 ; 4.807 ; 4.807 ;
+; OE         ; O[8]        ; 5.326 ; 5.326 ; 5.326 ; 5.326 ;
+; OE         ; O[9]        ; 5.126 ; 5.126 ; 5.126 ; 5.126 ;
+; OE         ; O[10]       ; 5.090 ; 5.090 ; 5.090 ; 5.090 ;
+; OE         ; O[11]       ; 5.326 ; 5.326 ; 5.326 ; 5.326 ;
+; OE         ; O[12]       ; 4.797 ; 4.797 ; 4.797 ; 4.797 ;
+; OE         ; O[13]       ; 5.099 ; 5.099 ; 5.099 ; 5.099 ;
+; OE         ; O[14]       ; 5.106 ; 5.106 ; 5.106 ; 5.106 ;
+; OE         ; O[15]       ; 5.126 ; 5.126 ; 5.126 ; 5.126 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; OE         ; O[0]        ; 2.519 ; 2.519 ; 2.519 ; 2.519 ;
+; OE         ; O[1]        ; 2.519 ; 2.519 ; 2.519 ; 2.519 ;
+; OE         ; O[2]        ; 2.534 ; 2.534 ; 2.534 ; 2.534 ;
+; OE         ; O[3]        ; 2.719 ; 2.719 ; 2.719 ; 2.719 ;
+; OE         ; O[4]        ; 2.539 ; 2.539 ; 2.539 ; 2.539 ;
+; OE         ; O[5]        ; 2.735 ; 2.735 ; 2.735 ; 2.735 ;
+; OE         ; O[6]        ; 2.727 ; 2.727 ; 2.727 ; 2.727 ;
+; OE         ; O[7]        ; 2.577 ; 2.577 ; 2.577 ; 2.577 ;
+; OE         ; O[8]        ; 2.835 ; 2.835 ; 2.835 ; 2.835 ;
+; OE         ; O[9]        ; 2.759 ; 2.759 ; 2.759 ; 2.759 ;
+; OE         ; O[10]       ; 2.727 ; 2.727 ; 2.727 ; 2.727 ;
+; OE         ; O[11]       ; 2.835 ; 2.835 ; 2.835 ; 2.835 ;
+; OE         ; O[12]       ; 2.567 ; 2.567 ; 2.567 ; 2.567 ;
+; OE         ; O[13]       ; 2.735 ; 2.735 ; 2.735 ; 2.735 ;
+; OE         ; O[14]       ; 2.739 ; 2.739 ; 2.739 ; 2.739 ;
+; OE         ; O[15]       ; 2.759 ; 2.759 ; 2.759 ; 2.759 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 300168   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK        ; CLK      ; 300168   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 21    ; 21   ;
+; Unconstrained Input Port Paths  ; 2288  ; 2288 ;
+; Unconstrained Output Ports      ; 16    ; 16   ;
+; Unconstrained Output Port Paths ; 32    ; 32   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Dec 04 23:07:37 2022
+Info: Command: quartus_sta Buoi2 -c Buoi2
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Buoi2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -8.742
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -8.742     -1115.756 CLK 
+Info (332146): Worst-case hold slack is 2.801
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     2.801         0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -145.380 CLK 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.308
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.308      -406.270 CLK 
+Info (332146): Worst-case hold slack is 1.212
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.212         0.000 CLK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -145.380 CLK 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4556 megabytes
+    Info: Processing ended: Sun Dec 04 23:07:39 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
